@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>صحة السيرفر</title>
+<link rel="stylesheet" href="style.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <div><h1 id="server">صحة السيرفر</h1><p class="muted" id="when">جارٍ التحميل...</p></div>
+  <span id="overall" class="pill">—</span>
+</header>
+<main>
+  <p id="stale" class="banner" hidden></p>
+  <section class="grid">
+    <article class="card" id="c-cpu"><h2>المعالج</h2><b class="big" id="cpu">—</b><p class="muted" id="cpu-sub"></p><svg class="chart" id="ch-cpu" viewBox="0 0 300 60" preserveAspectRatio="none"></svg></article>
+    <article class="card" id="c-mem"><h2>الذاكرة</h2><b class="big" id="mem">—</b><p class="muted" id="mem-sub"></p><svg class="chart" id="ch-mem" viewBox="0 0 300 60" preserveAspectRatio="none"></svg></article>
+    <article class="card" id="c-load"><h2>الحمل</h2><b class="big" id="load">—</b><p class="muted" id="load-sub"></p><svg class="chart" id="ch-load" viewBox="0 0 300 60" preserveAspectRatio="none"></svg></article>
+    <article class="card" id="c-net"><h2>الشبكة</h2><b class="big" id="net">—</b><p class="muted" id="net-sub"></p><svg class="chart" id="ch-net" viewBox="0 0 300 60" preserveAspectRatio="none"></svg></article>
+  </section>
+  <p class="muted note">الرسوم لآخر 24 ساعة، متوسط كل 5 دقائق.</p>
+  <section class="grid two">
+    <article class="card"><h2>الأقراص</h2><div id="disks"></div></article>
+    <article class="card"><h2>الخدمات</h2><ul class="list" id="services"></ul><h2 class="mt">الشهادات</h2><ul class="list" id="certs"></ul></article>
+    <article class="card"><h2>النظام</h2><ul class="list" id="system"></ul></article>
+    <article class="card"><h2>أكثر العمليات استهلاكاً للذاكرة</h2><table id="top"><thead><tr><th>العملية</th><th>الذاكرة</th><th>المعالج</th></tr></thead><tbody></tbody></table></article>
+  </section>
+</main>
+</body>
+</html>

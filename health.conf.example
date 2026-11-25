@@ -1,0 +1,28 @@
+# /etc/server-health/health.conf — انسخه وعدّله
+
+# أين تُكتب status.json و history.csv (المجلد الذي يخدمه Nginx مع ملفات dashboard)
+OUT_DIR=/var/www/server-health
+# ملفات الحالة بين التشغيلات (القراءة السابقة للمعالج، وحالة التنبيهات)
+STATE_DIR=/var/lib/server-health
+
+# الاسم الظاهر في اللوحة والتنبيهات
+SERVER_NAME="web-1"
+
+# خدمات systemd التي تُراقب (افصل بمسافة)
+SERVICES="nginx php8.3-fpm mariadb"
+
+# نطاقات تُفحص شهاداتها مرة كل ساعة (host أو host:port)
+CERTS="example.com www.example.com"
+
+# حدود التنبيه
+WARN_CPU=90         # %
+WARN_MEM=90         # % من الذاكرة (الكلية - المتاحة)
+WARN_DISK=90        # % لكل قرص، وكذلك لعُقد الملفات inodes
+WARN_LOAD=2         # الحمل ÷ عدد الأنوية
+WARN_CERT_DAYS=14   # أيام قبل انتهاء الشهادة
+ALERT_AFTER=3       # دقائق متتالية فوق الحد قبل التنبيه
+HISTORY_DAYS=7
+
+# تيليجرام (اختياري): التوكن من @BotFather ورقم المحادثة من @userinfobot
+TELEGRAM_TOKEN=""
+TELEGRAM_CHAT_ID=""
